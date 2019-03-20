@@ -16,6 +16,7 @@ public class Robbery {
 			return 0;
 	}
 
+    // Need to save data in a table 
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
