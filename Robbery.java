@@ -3,6 +3,7 @@
 // get with the items.
 
 // You are encouraged to make helper functions!
+import Math.*;
 
 public class Robbery {
 
@@ -12,12 +13,26 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-			return 0;
+	    int totes = 0; 
+	    // base case no items
+	    if (sizes.length == 0)
+		return 0;
+
+	    // base case one item - exceeds capacity
+	    if (sizes.length == 1 && size[0] > capacity)
+		return 0;
+	    
+	    // base case one item - meets capacity
+	    if (sizes.length == 1 && size[0] <= capacity)
+		return worth[0];
+	    
+	    // return max of either optimal worth including nth item or excluding it
+	    for (int i=0; i < 
+		     return Math.max(maxVal(capacity, sizes, worths, sizes.length-1), maxVal(capacity, sizes, worths, sizes.length-1) + worths[sizes.length]); // WRONG FIX THIS
 	}
 
     // Need to save data in a table 
-	public int maximizeRobWorthBottomUp(
+	public int maximizeRobWorthBottomUp
 		int capacity,
 		int[] sizes,
 		int[] worths
