@@ -27,10 +27,22 @@ public class Robbery {
 		return worth[0];
 	    
 	    // return max of either optimal worth including nth item or excluding it
-	    for (int i=0; i < 
-		     return Math.max(maxVal(capacity, sizes, worths, sizes.length-1), maxVal(capacity, sizes, worths, sizes.length-1) + worths[sizes.length]); // WRONG FIX THIS
+	    return Math.max(maxVal(capacity, sizes, worths, sizes.length-1),
+				     maxVal(capacity, sizes, worths, sizes.length-1) + worths[sizes.length]);
 	}
 
+    public int maxVal(int capacity,int sizes[], int worths[], int n) {
+	// takes array and searches the first n entries
+	// returns highest value combination within capacity, given sizes
+
+	if (n == 0) return 0;
+	if (n == 1) return worths[n];
+	return Math.max(maxVal(capacity, sizes, worths, n-1),
+			maxVal(capacity, sizes, worths, n-1) + worths[n]);
+	
+    }
+
+    
     // Need to save data in a table 
 	public int maximizeRobWorthBottomUp
 		int capacity,
