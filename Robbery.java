@@ -3,7 +3,7 @@
 // get with the items.
 
 // You are encouraged to make helper functions!
-import Math.*;
+
 
 public class Robbery {
 
@@ -19,12 +19,12 @@ public class Robbery {
 		return 0;
 
 	    // base case one item - exceeds capacity
-	    if (sizes.length == 1 && size[0] > capacity)
+	    if (sizes.length == 1 && sizes[0] > capacity)
 		return 0;
 	    
 	    // base case one item - meets capacity
-	    if (sizes.length == 1 && size[0] <= capacity)
-		return worth[0];
+	    if (sizes.length == 1 && sizes[0] <= capacity)
+		return worths[0];
 	    
 	    // return max of either optimal worth including nth item or excluding it
 	    return maxVal(capacity, sizes, worths, sizes.length-1);
@@ -49,7 +49,7 @@ public class Robbery {
 
     
     // Need to save data in a table 
-	public int maximizeRobWorthBottomUp
+    public int maximizeRobWorthBottomUp (
 		int capacity,
 		int[] sizes,
 		int[] worths
